@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Teste from "./assets/teste"
+import Custo from "./assets/custo"
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     <Teste />
+    <Custo />
   </React.StrictMode>,
   document.getElementById('root')
 );

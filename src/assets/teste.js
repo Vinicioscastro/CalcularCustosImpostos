@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./testes.css";
 
-export default function Teste(){
-    return(
-        <h1>Olá mundo</h1>
-    )
+export default function Teste() {
+  return (
+    <div className="navbar">
+      <h1>Calcular Custos, Impostos e Gerar Valores </h1>
+    </div>
+  );
 }
