@@ -15,6 +15,18 @@ export default function Custo() {
     setShowName(false);
   }, [name]);
 
+  function calcular(cust, hos, cont, is, imp) {
+    var gasto = cust + hos + cont;
+    var impostoGeral = 1 - (is + imp) / 100;
+    var necessario = gasto;
+
+    while (necessario * impostoGeral <= gasto) {
+      necessario = necessario + 1;
+    }
+    console.log(gasto, impostoGeral, necessario);
+    return necessario;
+  }
+
   return (
     <div className="componentecusto">
       <h1>Entre com os dados necessarios</h1>
@@ -63,11 +75,16 @@ export default function Custo() {
       ></input>
 
       <b>Imposto Sobre Lucro</b>
-      <input type="number"></input>
+      <input
+        type="number"
+        name="imposto"
+        value={imposto}
+        onChange={(event) => setImposto(Number(event.target.value))}
+      ></input>
 
       <button
         onClick={(event) => {
-          setSoma(maodeobra + host);
+          setSoma(calcular(maodeobra, host, contador, iss, imposto));
         }}
       >
         Somar os 2 numeros
