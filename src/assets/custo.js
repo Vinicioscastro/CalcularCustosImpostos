@@ -31,7 +31,7 @@ export default function Custo() {
     <div className="componentecusto">
       <h1>Entre com os dados necessarios</h1>
 
-      <b>Nome</b>
+      {/* <b>Nome</b>
       <input
         type="text"
         name="nome"
@@ -41,7 +41,7 @@ export default function Custo() {
 
       <button onClick={() => setShowName(true)}>enviar</button>
 
-      {showName && <h1>{name}</h1>}
+      {showName && <h1>{name}</h1>} */}
 
       <b>Mão de Obra</b>
       <input
@@ -87,10 +87,15 @@ export default function Custo() {
           setSoma(calcular(maodeobra, host, contador, iss, imposto));
         }}
       >
-        Somar os 2 numeros
+        Calcular Valores
       </button>
 
-      {soma > 0 && <h1>{soma}</h1>}
+      <ul>
+        <li>{<h1> Custos: {maodeobra + host + contador}</h1>}</li>
+        <li>{<h1> ISS: {iss}</h1>}</li>
+        <li>{<h1> Imposto: {imposto}</h1>}</li>
+        <li>{soma > 0 && <h1> Custo Total: {soma}</h1>}</li>
+      </ul>
     </div>
   );
 }
