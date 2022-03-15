@@ -94,6 +94,9 @@ export default function Custo() {
         <li>{<h1> Custos: {maodeobra + host + contador}</h1>}</li>
         <li>{<h1> ISS: {iss}</h1>}</li>
         <li>{<h1> Imposto: {imposto}</h1>}</li>
+        <li>
+          {<h1>Imposto Total: {soma - (maodeobra + host + contador)}</h1>}
+        </li>
         <li>{soma > 0 && <h1> Custo Total: {soma}</h1>}</li>
       </ul>
     </div>
